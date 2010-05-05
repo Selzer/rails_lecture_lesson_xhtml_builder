@@ -13,16 +13,16 @@ class XHTMLBuilder
 	end
 	
 	def method_missing(sym, *args, &block) 
-			@content << "<#{sym}>\n"
+    @content << "<#{sym}>\n"
 			
-			if block_given? then yield
-			else
-				unless (args[0].nil?)
-					@content << args[0] << "\n"
-				end
+		if block_given? then yield
+		else
+			unless (args[0].nil?)
+  			@content << args[0] << "\n"
 			end
-      @content << "</#{sym}>\n"
-	end	
+		end
+    @content << "</#{sym}>\n"
+  end	
 	
 end
 
